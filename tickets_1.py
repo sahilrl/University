@@ -4,7 +4,7 @@
  is occupied. The output of the program tells if there is even
  one seat left in any compartment and also how many compartments
  are fully occupied.'''
-compartments = [(0, 1, 0, 1), (0, 0, 0, 0), (1, 1, 1, 1), (0, 1, 1, 1)]
+compartments = [(1, 0, 1, 0), (0, 0, 0, 0), (1, 1, 1, 1), (0, 1, 1, 1)]
 
 
 def checking_seat():
@@ -21,15 +21,33 @@ def checking_seat():
             if i == 0:
                 if seat == 0:
                     a += 1
+                if a == 0:
+                    p = 1
+                else:
+                    p = 0
             elif i == 1:
                 if seat == 0:
                     b += 1
+                if b == 0:
+                    q = 1
+                else:
+                    q = 0
             elif i == 2:
                 if seat == 0:
                     c += 1
+                if c == 0:
+                    r = 1
+                else:
+                    r = 0
             elif i == 3:
                 if seat == 0:
                     d += 1
+                if d == 0:
+                    s = 1
+                else:
+                    s = 0
+    total_full_compartments = p + q + r + s
+    print("Total full Compartments: "+str(total_full_compartments))
     print("Total occupied seats: "+str(total_filled_seats))
     print("Total seats available: "+str(total_seats_available))
     print("Total seats in Compartment A: "+str(a))

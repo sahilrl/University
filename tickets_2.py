@@ -9,7 +9,7 @@ compartments = [(1, 0, 1, 0), (0, 0, 0, 0), (1, 1, 1, 1), (0, 1, 1, 1)]
 
 def checking_seat():
     list_empty = []
-    a = 0
+    var = 0
     for i in range(0, len(compartments)):
         comp = compartments[i]
         total_seats_available = 0
@@ -18,13 +18,13 @@ def checking_seat():
                 total_seats_available += 1
         list_empty.append(total_seats_available)
         if list_empty[i] == 0:
-            a += 1
-    print("Total full compartments: "+str(a))
+            var += 1
+    print("Total full compartments: "+str(var))
     for z in range(4):
-        A = ["A", "B", "C", "D"]
+        names_compartment = ["A", "B", "C", "D"]
         if list_empty[z] != 0:
             print("Seats available in Compartment"
-                  "%s: %s" % (A[z], list_empty[z]))
+                  "%s: %s" % (names_compartment[z], list_empty[z]))
 
 
 checking_seat()

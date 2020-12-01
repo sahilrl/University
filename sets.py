@@ -1,12 +1,11 @@
+'''This program takes two strings as user input
+   and do the sets operation on them as display
+   the result as output.'''
 string_A = (input("Enter first string: ").lower())
 string_B = (input("Enter second string: ").lower())
 print(string_A, string_B)
-set_A = set()
-set_B = set()
-for i in string_A:
-    set_A.add(i)
-for j in string_B:
-    set_B.add(j)
+set_A = set(string_A)
+set_B = set(string_B)
 union = set_A.union(set_B)
 intersection = set_A.intersection(set_B)
 unique_A = set_A - intersection

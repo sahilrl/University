@@ -24,7 +24,7 @@ def taking_input():
             generator()
 
 
-def generator(n=0, b=None):
+def generator(n = 0, b = None):
     '''This program'''
     if b is not None:
         c = range(n, b)

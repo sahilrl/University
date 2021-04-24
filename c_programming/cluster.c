@@ -2,11 +2,11 @@
 #include <stdlib.h>
 //global variable defined
 int n;
+int check;
+int cha;
+int charr;
 //taking and validating user input
 int userinput() {
-    int check;
-    int cha;
-    int charr;
     printf("Enter number of elements to put in array: ");
     check = scanf("%d", &n);
     charr = scanf("%c", &cha);
@@ -30,7 +30,13 @@ int main() {
     //putting elements in array
     for (int i=0; i<n; i++) {
         printf("Enter element %d: ", i+1);
-        scanf("%d", &arr[i]);
+        // taking only postive input in  array
+        while ((scanf("%d", &arr[i]) != 1) || (arr[i] < 0))
+        {
+            printf("Your input is incorrect\n");
+            printf("Please enter again element %d: ",i+1);
+            charr = scanf("%c", &cha);
+        }
     }
     //printing original array
     printf("[");

@@ -1,11 +1,31 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+//globals
+int n;
+char cha;
+//validation
+int userinput() {
+    int check;
+    int charr;
+    check = scanf("%d", &n);
+    charr = scanf("%c", &cha);
+    while ((check != 1) || (n < 0))  {
+        printf("Your input is incorrect\n");
+        printf("Enter +ve number: ");
+        check = scanf("%d", &n);
+        charr = scanf("%c", &cha);
+    };
+    return (n);
+};
+
+
 int main() {
-    int n;
+    //local variables
+    char cha;
     // Creating the array
-    printf("Enter the size of the Array: ");
-    scanf("%d", &n);
+    printf("Enter number of elements to put in array: ");
+    n = userinput();
 
     //int arr[max_size]
     int* arr = (int*) malloc(sizeof(int) * n);
@@ -13,8 +33,13 @@ int main() {
     //taking input from the user
     for(int i=0; i<n; i++)
     {
-        printf("Enter the %d of Element:", i+1);
-        scanf("%d", &arr[i]);
+        printf("Enter the %d Element:", i+1);
+        while (scanf("%d", &arr[i]) != 1) {
+            scanf("%c", &cha);
+            printf("You didn't enter +ve number. Try again...\n");
+            printf("Re-enter %d Element:", i+1);
+        };
+
     }
     //printing the array
     printf("[");
